@@ -17,6 +17,7 @@
 #
 
 gem "rails", ">= 7.0"
+gem "bundler", ">= 2.3.7"
 gem "puma", ">= 3.12.6"
 gem "sass-rails", ">= 5.0"
 gem "virtus", ">= 2.0.0"
