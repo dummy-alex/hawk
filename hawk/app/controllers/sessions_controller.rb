@@ -9,6 +9,11 @@ class SessionsController < ApplicationController
 
   def new
     @session = Session.new
+    # if you check params in the console when you are in the https://192.168.145.11:7630/login page
+    # >> params
+    # => <ActionController::Parameters {"controller"=>"sessions", "action"=>"new"} permitted: false>
+    # you will se that it's controlled by the SESSIONS controller and the method is NEW.
+    @bar = "BAR SessionsController " + __FILE__
 
     respond_to do |format|
       format.html do

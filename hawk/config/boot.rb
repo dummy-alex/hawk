@@ -55,4 +55,7 @@ else
 
   gem "kramdown", version: ">= 1.14"
   require "kramdown"
+
+  gem "web-console", version: ">= 3"
+  require "web-console"
 end

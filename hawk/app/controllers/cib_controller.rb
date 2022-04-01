@@ -9,6 +9,18 @@ class CibController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:show, :apply]
 
   def show
+    # if you check params in the console when you are in the https://192.168.145.11:7630/...??? page
+    # >> params
+    # => <ActionController::Parameters {"controller"=>"cib", "action"=>"show", "cib_id"=>"live"} permitted: false>
+    # you will se that it's controlled by the CIB controller and the method is SHOW.
+    @bar = "123"
+    # byebug is heare basically a breakpoint
+    # use: help, where, continue, step, next, up, disable
+    # the full list of commands is here: https://github.com/deivid-rodriguez/byebug
+    #byebug
+    @bar = "BAR CibController " + __FILE__
+    #byebug
+
     respond_to do |format|
       format.html
       format.json do

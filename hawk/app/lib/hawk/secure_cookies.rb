@@ -2,6 +2,8 @@ module Hawk
   class SecureCookies
 
     COOKIE_SEPARATOR = "\n".freeze
+    FOO = "foo"
+    @bar = "BAR"
 
     def initialize(app)
       @app = app

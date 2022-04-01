@@ -46,7 +46,14 @@
           <div class="col-sm-6 hidden-xs">
              <h2>
               SUSE <span>High Availability</span>
-            </h2>
+             </h2>
+	     <%= console %> <!-- console can be placed anywhere in the file -->
+	     <%= debug({:name => "Aleksei"})  %>
+	     <%= {:name => "Aleksei"}.inspect  %>
+	     <%= [1,2, 3, "test"].inspect  %>
+	     <%= debug([1,2, 3, "test"]) %>
+	     <%= debug(ENV["PATH"]) %>
+	     <%= debug(params) %>
              <p><%= _("Hawk simplifies the management and configuration of High Availability clusters, making it easy to eliminate downtime and maximizing service availability.") %>
             </p>
           </div>

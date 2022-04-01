@@ -6,6 +6,7 @@ ROOT = File.expand_path("../../", __FILE__)
 @bind = ENV["HAWK_BIND"] || "unix:///usr/share/hawk/tmp/hawk.sock"
 
 bind @bind
+#bind "tcp://0.0.0.0:3000"
 directory ROOT
 environment @environment
 
