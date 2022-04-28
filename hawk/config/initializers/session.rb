@@ -9,6 +9,9 @@ Rails.application.config.tap do |config|
     # Allow session cookie to persist for a (somewhat arbitrary) ten days.
     # This means when using the dashboard you won"t be required to log in
     # to all your clusters all the time.
-    expire_after: 60 * 60 * 24 * 10
+    expire_after: 60 * 60 * 24 * 10,
+    # Explicitely set secure and httponly flags for session cookies
+    secure: Rails.env.production?,
+    httponly: true
   )
 end

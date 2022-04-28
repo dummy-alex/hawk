@@ -8,6 +8,11 @@ class SessionsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def new
+    # enforce the httponly flag of the request cookies
+    cookies.each do |cookie|
+      cookie = { :value => cookie[1], :httponly => true }
+    end
+
     @session = Session.new
 
     respond_to do |format|
