@@ -6,19 +6,17 @@ Rails.application.config.gettext_i18n_rails.tap do |config|
   config.xgettext = ["--sort-output", "--no-wrap"]
 end
 
-FastGettext.tap do |config|
-  config.add_text_domain "hawk", path: Rails.root.join("locale").to_s
 
-  config.default_text_domain = "hawk"
-  config.default_locale = "en_US"
-  config.default_available_locales = ["en_US"]
+FastGettext.add_text_domain "hawk", path: Rails.root.join("locale").to_s
+FastGettext.default_text_domain = "hawk"
+FastGettext.default_locale = "en_GB"
+FastGettext.default_available_locales = ["en_GB"]
 
-  Dir[Rails.root.join("locale", "*", "LC_MESSAGES", "*.mo").to_s].each do |l|
-    next unless l.match(/\/([^\/]+)\/LC_MESSAGES\/.*\.mo$/)
-    next if config.default_available_locales.include? $1
+Dir[Rails.root.join("locale", "*", "LC_MESSAGES", "*.mo").to_s].each do |l|
+  next unless l.match(/\/([^\/]+)\/LC_MESSAGES\/.*\.mo$/)
+  next if FastGettext.default_available_locales.include? $1
 
-    config.default_available_locales.push $1
-  end
+  FastGettext.default_available_locales.push $1
 end
 
 I18n::Backend::Simple.include(
