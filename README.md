@@ -8,7 +8,7 @@ Hawk provides a web interface for High Availability clusters managed
 by the Pacemaker cluster resource manager. The current goal of the
 project is to provide a complete management interface to the HA
 cluster, both in the form of a flexible REST API as well as a modern
-client frontend using the API.
+client frontend using the API. 
 
 http://hawk-ui.github.io
 
